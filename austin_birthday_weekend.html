@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACL 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            background: #0a1419;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #0a1419;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a2f3a, #2d4a5a);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: #0f1c23;
+            border-bottom: 1px solid #1e3a47;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            padding: 12px 8px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #8ba3b1;
+        }
+        
+        .nav-tab:hover {
+            background: rgba(139, 163, 177, 0.1);
+            color: #ffffff;
+        }
+        
+        .nav-tab.active {
+            background: #1e3a47;
+            color: #ffffff;
+            border-bottom: 2px solid #4a9eff;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            min-height: calc(100vh - 120px);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tab-content#schedule {
+            background: #0a1419;
+        }
+        
+        .tab-content#attendees {
+            background: #0d1a1f;
+        }
+        
+        .tab-content#info {
+            background: #0f1b21;
+        }
+        
+        .day-section {
+            margin-bottom: 20px;
+            background: rgba(30, 58, 71, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #1e3a47;
+        }
+        
+        .day-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .day-title::before {
+            margin-right: 8px;
+        }
+        
+        .event {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #4a9eff;
+            backdrop-filter: blur(10px);
+        }
+        
+        .event.meal {
+            border-left: 3px solid #00d4aa;
+            background: rgba(0, 212, 170, 0.08);
+        }
+        
+        .event.festival {
+            border-left: 3px solid #ff6b6b;
+            background: rgba(255, 107, 107, 0.08);
+        }
+        
+        .event.nightlife {
+            border-left: 3px solid #ffd93d;
+            background: rgba(255, 217, 61, 0.08);
+        }
+        
+        .event-time {
+            font-weight: 600;
+            color: #4a9eff;
+            font-size: 0.9em;
+        }
+        
+        .event-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin: 4px 0;
+            font-size: 1em;
+        }
+        
+        .event-details {
+            color: #8ba3b1;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        
+        .event-details a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+        
+        .event-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .attendee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        
+        .attendee-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #1e3a47;
+            backdrop-filter: blur(10px);
+        }
+        
+        .attendee-name {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        
+        .attendee-info {
+            font-size: 0.8em;
+            color: #8ba3b1;
+            margin: 2px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #4a9eff, #00d4aa);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .weather-widget {
+            background: linear-gradient(135deg, #1e3a47, #2d4a5a);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .weather-widget h3 {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .weather-widget p {
+            font-size: 0.85em;
+            margin: 2px 0;
+            color: #b8d4e3;
+        }
+        
+        h2 {
+            color: #ffffff;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+            
+            .nav-tab {
+                font-size: 0.8em;
+                padding: 10px 4px;
+            }
+            
+            .attendee-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-content {
+                padding: 12px;
+            }
+            
+            .day-section {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .event {
+                padding: 10px;
+                margin: 6px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ACL 2025</h1>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('schedule')">Schedule</button>
+            <button class="nav-tab" onclick="showTab('attendees')">Attendees</button>
+            <button class="nav-tab" onclick="showTab('info')">Info</button>
+        </div>
+        
+        <div id="schedule" class="tab-content active">
+            <div class="day-section">
+                <div class="day-title">☀️ THU OCT 2 - Early Arrivals</div>
+                
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-title">Check-in & Settle</div>
+                    <div class="event-details">📍 Hotels - Get settled and explore</div>
+                </div>
+                
+                <div class="event meal">
+                    <div class="event-time">Lunch</div>
+                    <div class="event-title">Lunch (~3 people)</div>
+                    <div class="event-details">📍 Location TBD - For early arrivals<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd</small></div>
+                </div>
+                
+                <div class="event meal" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPPfSG2ejKmoEfdUbINS1Q0nA1EQg4M1Hlnq92Ys5AGeZbtw454mps2kwpnfQ6lQkPmulmLfXzP5TG6TkKHIm7V6I46nwhSYiJDs7kbM6fDcPSIU-F1gnml8ofYYZJ0Mi4eGvB-iJD2LIM0RnQjVxLP2ANS_EnrycjyFidibTjf5hJgZklAkHKJ9PrXk54Vhmj4YQJKQif6cyRc1JaZhL7XWCn_2pAOMKiPKluRaTXUyym7POSmAdPbFJLkhrHdSjZyOBaJqpR53YMsLfQOQlMRw7C2Na6nIBPeK0gnEhvcYdYPmPqSBKEujiffzTTt7xrzrwkyqtyhUP9uqMmjWxFxfiRakO9fRIsCYw2xBCXLX2tIXat9Bi7iQ7FVrHVJL__gD2eOz4nh1xTFkeIuk8ajENegMDQNHJjRO7nw3IofxxegNBNpYSpVZGPC7xC9LS4KN0kX2dH31J__zaau1IKj7ZT5ro1rXYBWrQ8dQJuk2FvxW2hxKmsCSg3FdcXs72Lo9FfNqdh7pgZ3UbQbSm7B2J6BVM_g6Okpmd_sPxs6x99DfsUghAKAF3lZhVwLWEsVRA4yzV_ow3MY4ys2eXNnwsgh33Zc91Uvap1s3UHBXfIyj8oWUy-_DlIUtJKs6jYw39qOOWxoXIIP5SHgdRJvQqGHAezhzlYXh4DiaVP_PDu-YbCcRB_qA2eRf2EXT8arLjTjgz5mf2m_7cVCJemii1dTP2b7JWsCKimbwb0yhXxXziLtIUuATIOxsx5Bq8on5FTtQWfyVR2TZq7vbldpMmeC4ZKtzN01q8h4vN4aDG1jwYHk9v2-i3HrLDBARG2CeTEKvyJ6oS9mbQjlOh0rBsLb81iqtbhV4InP8liVXWuugoSSOtviOeGT3kogCWTFGw5XQwT9gH-mKQ5aw1GS2bCJov65gBsoBUPmZQyn0fsDooilo-CxxWI0fYadeWXDdj7AG-KV=w390-h492-no?authuser=0'); background-size: cover; background-position: right center; background-repeat: no-repeat; opacity: 1.0;">
+                    <div class="event-time">8:30 PM</div>
+                    <div class="event-title">Dinner (~13 people)</div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin" target="_blank">Lamberts Downtown Barbecue</a><br>401 W 2nd St, Austin, TX 78701<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd, Andy, Noelle, Sarah, John</small></div>
+                </div>
+                
+                <div class="event nightlife">
+                    <div class="event-time">Late Night</div>
+                    <div class="event-title">Hit the Town</div>
+                    <div class="event-details">📍 Explore Austin nightlife</div>
+                </div>
+            </div>
+            
+            <div class="day-section">
+                <div class="day-title">🌤️ FRI OCT 3 - ACL Day 1</div>
+                
+                <div class="event meal">
+                    <div class="event-time">12:00 PM</div>
+                    <div class="event-title">Brunch on Lake Austin (~20 people)</div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Quince+Lakehouse+Austin" target="_blank">Quince Lakehouse</a><br>4404 Eck Ln, Austin, TX 78734<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small></div>
+                </div>
+                
+                <div class="event festival">
+                    <div class="event-time">2:00 PM</div>
+                    <div class="event-title"><span class="highlight">ACL Music Festival - Day 1</span></div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Zilker+Park+Austin" target="_blank">Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Gates open at 12 PM</div>
+                </div>
+                
+                <div class="event nightlife">
+                    <div class="event-time">Late Night</div>
+                    <div class="event-title">Late Night</div>
+                    <div class="event-details">📍 Post-festival exploration - see where the night takes us!</div>
+                </div>
+            </div>
+            
+            <div class="day-section">
+                <div class="day-title">☀️ SAT OCT 4 - ACL Day 2</div>
+                
+                <div class="event">
+                    <div class="event-time">12:00 PM</div>
+                    <div class="event-title">Party Bus Pickup</div>
+                    <div class="event-details">📍 Hotel pickup for BBQ lunch</div>
+                </div>
+                
+                <div class="event meal">
+                    <div class="event-time">12:30 PM</div>
+                    <div class="event-title">BBQ Lunch (~20 people)</div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Salt+Lick+BBQ+Austin" target="_blank">Salt Lick BBQ</a><br>18300 FM 1826, Austin, TX 78737<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small></div>
+                </div>
+                
+                <div class="event festival">
+                    <div class="event-time">2:00 PM</div>
+                    <div class="event-title"><span class="highlight">ACL Music Festival - Day 2</span></div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Zilker+Park+Austin" target="_blank">Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Gates open at 12 PM</div>
+                </div>
+                
+                <div class="event nightlife">
+                    <div class="event-time">After Festival</div>
+                    <div class="event-title">Disco Lines After Party</div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Disco+Lines+Austin" target="_blank">Disco Lines</a><br>We have tickets for everyone - let us know if you can't make it!</div>
+                </div>
+            </div>
+            
+            <div class="day-section">
+                <div class="day-title">🌤️ SUN OCT 5 - ACL Day 3</div>
+                
+                <div class="event meal">
+                    <div class="event-time">11:00 AM</div>
+                    <div class="event-title">Recovery Brunch & Birthday Celebration (~18 people)</div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Jacoby's+Restaurant+Austin" target="_blank">Jacoby's Restaurant</a><br>3235 Bee Caves Rd, Austin, TX 78746<br>Steakhouse, Southern Food & Brunch - A great place to lick our wounds and celebrate!<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small></div>
+                </div>
+                
+                <div class="event festival">
+                    <div class="event-time">2:00 PM</div>
+                    <div class="event-title"><span class="highlight">ACL Music Festival - Day 3</span></div>
+                    <div class="event-details">📍 <a href="https://maps.google.com/?q=Zilker+Park+Austin" target="_blank">Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Final day!</div>
+                </div>
+                
+                <div class="event nightlife">
+                    <div class="event-time">Evening</div>
+                    <div class="event-title">See Where the Night Takes Us</div>
+                    <div class="event-details">📍 Spontaneous fun - join for any or all activities!</div>
+                </div>
+            </div>
+            
+            <div class="day-section">
+                <div class="day-title">🌧️ MON OCT 6 - Departure Day</div>
+                
+                <div class="event meal">
+                    <div class="event-time">Breakfast</div>
+                    <div class="event-title">Breakfast (~16 people)</div>
+                    <div class="event-details">📍 Location TBD - Final meal together<br>
+                    <small style="color: #666; font-size: 0.8em;">Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey</small></div>
+                </div>
+                
+                <div class="event">
+                    <div class="event-time">Afternoon</div>
+                    <div class="event-title">Departures</div>
+                    <div class="event-details">📍 Various times - Safe travels everyone!</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="attendees" class="tab-content">
+            <h2>Our Amazing Group</h2>
+            
+            <div class="attendee-grid">
+                <div class="attendee-card">
+                    <div class="attendee-name">Ash & Mandy</div>
+                    <div class="attendee-info">✈️ Arrives: Thursday 1:35 PM - American Airlines #1746</div>
+                    <div class="attendee-info">🛫 Departs: Monday 2:15 PM - American Airlines #0670</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Graham & Sara</div>
+                    <div class="attendee-info">✈️ Arrives: Thursday 1:35 PM - American Airlines #1746</div>
+                    <div class="attendee-info">🛫 Departs: Monday 2:15 PM - American Airlines #0670</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Adam</div>
+                    <div class="attendee-info">✈️ Arrives: Thursday 1:35 PM - Flight #1746</div>
+                    <div class="attendee-info">🛫 Departs: Monday 2:15 PM - Flight #0670</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Neil & Shannon</div>
+                    <div class="attendee-info">✈️ Arrives: ~Thursday afternoon</div>
+                    <div class="attendee-info">🛫 Departs: ~Saturday afternoon</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Matt & Pavand</div>
+                    <div class="attendee-info">✈️ Arrives: ~Thursday evening</div>
+                    <div class="attendee-info">🛫 Departs: ~Sunday early</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Leia</div>
+                    <div class="attendee-info">✈️ Arrives: ~Friday 2 PM</div>
+                    <div class="attendee-info">🛫 Departs: ~Monday</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">David & Boyd</div>
+                    <div class="attendee-info">✈️ Arrives: ~Thursday evening</div>
+                    <div class="attendee-info">🛫 Departs: ~Monday</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Andy & Noelle</div>
+                    <div class="attendee-info">✈️ Arrives: ~Thursday</div>
+                    <div class="attendee-info">🛫 Departs: TBD</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Sarah & John McFadden</div>
+                    <div class="attendee-info">✈️ Arrives: ~Thursday 11 PM</div>
+                    <div class="attendee-info">🛫 Departs: ~Monday</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Marc & Beth</div>
+                    <div class="attendee-info">✈️ Arrives: ~Friday 2 PM</div>
+                    <div class="attendee-info">🛫 Departs: ~Monday</div>
+                    <div class="attendee-info">🏨 Hotel: The LINE Austin</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Clayon & Korey</div>
+                    <div class="attendee-info">✈️ Arrives: ~Friday afternoon</div>
+                    <div class="attendee-info">🛫 Departs: ~Monday</div>
+                    <div class="attendee-info">🏨 Hotel: Fairfield by Marriott Inn & Suites Austin Downtown</div>
+                </div>
+                
+                <div class="attendee-card">
+                    <div class="attendee-name">Sean & Elizabeth</div>
+                    <div class="attendee-info">✈️ Arrives: ~Friday</div>
+                    <div class="attendee-info">🛫 Departs: ~Sunday</div>
+                    <div class="attendee-info">🏨 Hotel: Fairfield by Marriott Inn & Suites Austin Downtown</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="info" class="tab-content">
+            <h2>Important Info</h2>
+            
+            <div class="weather-widget">
+                <h3>🌤️ Austin Weather - October 2-6</h3>
+                <p>Thu Oct 2: High 78°F, Low 58°F - Partly Cloudy</p>
+                <p>Fri Oct 3: High 82°F, Low 62°F - Sunny</p>
+                <p>Sat Oct 4: High 85°F, Low 65°F - Sunny</p>
+                <p>Sun Oct 5: High 80°F, Low 60°F - Partly Cloudy</p>
+                <p>Mon Oct 6: High 75°F, Low 55°F - Chance of Rain</p>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">🎫 ACL Festival</div>
+                <div class="event-details">
+                    • Tickets: Weekend passes required<br>
+                    • Location: Zilker Park<br>
+                    • Gates open: 12 PM daily<br>
+                    • Download the ACL app:<br>
+                    &nbsp;&nbsp;- iPhone: <a href="https://apps.apple.com/app/acl-music-festival/id915794516" target="_blank">App Store</a><br>
+                    &nbsp;&nbsp;- Android: <a href="https://play.google.com/store/apps/details?id=com.greencopper.austincitylimits" target="_blank">Google Play</a><br>
+                    • Rideshare drop-offs:<br>
+                    &nbsp;&nbsp;- Lady Bird Entrance: Veterans Drive (under MoPac bridge)<br>
+                    &nbsp;&nbsp;- Barton Springs East: Lee Barton Drive<br>
+                    &nbsp;&nbsp;- Barton Springs West: Wallingwood Drive
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">✨ GA Plus Benefits</div>
+                <div class="event-details">
+                    • Access to exclusive GA+ lounge by Ladybird Stage<br>
+                    • Shaded seating and relaxed atmosphere<br>
+                    • Air-conditioned restrooms<br>
+                    • Full-service bar (for purchase)<br>
+                    • Dedicated food vendors (for purchase)<br>
+                    • Expedited festival entry lanes<br>
+                    • Elevated viewing areas<br>
+                    • All General Admission benefits included
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">🏨 Accommodations</div>
+                <div class="event-details">
+                    <strong>The LINE Austin</strong><br>
+                    <a href="https://maps.google.com/?q=The+LINE+Austin" target="_blank">111 E Cesar Chavez St, Austin, TX 78701</a><br><br>
+                    <strong>Fairfield by Marriott Inn & Suites Austin Downtown</strong><br>
+                    <a href="https://maps.google.com/?q=Fairfield+by+Marriott+Inn+Suites+Austin+Downtown" target="_blank">300 E 4th St, Austin, TX 78701</a>
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">🗺️ Location Map</div>
+                <div id="mapContainer" style="width: 100%; height: 300px; background: rgba(255,255,255,0.05); border-radius: 8px; margin: 10px 0; position: relative; overflow: hidden; border: 1px solid #1e3a47;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #8ba3b1;">
+                        <p style="margin: 0; font-size: 0.9em;">Interactive map loading...</p>
+                        <p style="margin: 5px 0 0 0; font-size: 0.8em;">Tap locations below for directions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">📍 Key Locations</div>
+                <div class="event-details">
+                    📌 <strong>The LINE Austin</strong> - <a href="https://maps.google.com/?q=The+LINE+Austin" target="_blank">111 E Cesar Chavez St</a><br>
+                    📌 <strong>Zilker Park (ACL)</strong> - <a href="https://maps.google.com/?q=Zilker+Park+Austin" target="_blank">2100 Barton Springs Rd</a><br>
+                    📌 <strong>Lamberts BBQ</strong> - <a href="https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin" target="_blank">401 W 2nd St</a><br>
+                    📌 <strong>Quince Lakehouse</strong> - <a href="https://maps.google.com/?q=Quince+Lakehouse+Austin" target="_blank">4404 Eck Ln</a><br>
+                    📌 <strong>Jacoby's Restaurant</strong> - <a href="https://maps.google.com/?q=Jacoby's+Restaurant+Austin" target="_blank">3235 Bee Caves Rd</a><br>
+                    📌 <strong>Town Lake</strong> - <a href="https://maps.google.com/?q=Town+Lake+Austin" target="_blank">Lady Bird Lake Trail</a>
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">⏰ Walking Times from The LINE Austin</div>
+                <div class="event-details">
+                    🚶‍♂️ <strong>To Zilker Park (ACL):</strong> ~20 minutes<br>
+                    🚶‍♂️ <strong>To Lamberts BBQ:</strong> ~8 minutes<br>
+                    🚶‍♂️ <strong>To Town Lake:</strong> ~3 minutes<br>
+                    🚶‍♂️ <strong>To Quince Lakehouse:</strong> ~30 min drive (recommend rideshare)<br>
+                    🚶‍♂️ <strong>To Jacoby's Restaurant:</strong> ~40 minutes (recommend rideshare)
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">⏰ Walking Times from Fairfield Marriott</div>
+                <div class="event-details">
+                    🚶‍♂️ <strong>To Zilker Park (ACL):</strong> ~25 minutes<br>
+                    🚶‍♂️ <strong>To Lamberts BBQ:</strong> ~12 minutes<br>
+                    🚶‍♂️ <strong>To Town Lake:</strong> ~5 minutes<br>
+                    🚶‍♂️ <strong>To The LINE Austin:</strong> ~6 minutes<br>
+                    🚶‍♂️ <strong>To Quince Lakehouse:</strong> ~30 min drive (recommend rideshare)<br>
+                    🚶‍♂️ <strong>To Jacoby's Restaurant:</strong> ~45 minutes (recommend rideshare)
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">🚗 Transportation</div>
+                <div class="event-details">
+                    • Airport: AUS (Austin-Bergstrom)<br>
+                    • Rideshare: Uber/Lyft available<br>
+                    • Sam's Transportation Austin (Saturday Salt Lick)
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">☎️ Emergency Contacts</div>
+                <div class="event-details">
+                    • Trip Organizer: Your name & number<br>
+                    • Local Emergency: 911<br>
+                    • Non-emergency: 311
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
