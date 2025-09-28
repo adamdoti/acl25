@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACL 2025</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <meta name="description" content="Austin City Limits Music Festival 2025 - Group Trip Planning">
+    <meta name="theme-color" content="#0a1419">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>ACL 2025</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Dark</span>
+            </button>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="schedule" onclick="showTab('schedule')">Schedule</button>
+            <button class="nav-tab" data-tab="attendees" onclick="showTab('attendees')">Attendees</button>
+            <button class="nav-tab" data-tab="info" onclick="showTab('info')">Info</button>
+        </div>
+        
+        <!-- Tab Content -->
+        <div id="schedule" class="tab-content active">
+            <div class="loading">
+                <p>Loading schedule...</p>
+            </div>
+        </div>
+        
+        <div id="attendees" class="tab-content">
+            <div class="loading">
+                <p>Loading attendees...</p>
+            </div>
+        </div>
+        
+        <div id="info" class="tab-content">
+            <div class="loading">
+                <p>Loading info...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

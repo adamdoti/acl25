@@ -1,0 +1,356 @@
+{
+  "tripInfo": {
+    "title": "ACL 2025",
+    "description": "Austin City Limits Music Festival Group Trip"
+  },
+  "weather": [
+    {
+      "date": "Thu Oct 2",
+      "high": 78,
+      "low": 58,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "date": "Fri Oct 3", 
+      "high": 82,
+      "low": 62,
+      "condition": "Sunny"
+    },
+    {
+      "date": "Sat Oct 4",
+      "high": 85,
+      "low": 65,
+      "condition": "Sunny"
+    },
+    {
+      "date": "Sun Oct 5",
+      "high": 80,
+      "low": 60,
+      "condition": "Partly Cloudy"
+    },
+    {
+      "date": "Mon Oct 6",
+      "high": 75,
+      "low": 55,
+      "condition": "Chance of Rain"
+    }
+  ],
+  "schedule": [
+    {
+      "id": "day1",
+      "title": "☀️ THU OCT 2 - Early Arrivals",
+      "events": [
+        {
+          "time": "Afternoon",
+          "title": "Check-in & Settle",
+          "details": "📍 Hotels - Get settled and explore",
+          "type": "general"
+        },
+        {
+          "time": "Lunch",
+          "title": "Lunch (~3 people)",
+          "details": "📍 Location TBD - For early arrivals<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd</small>",
+          "type": "meal"
+        },
+        {
+          "time": "8:30 PM",
+          "title": "Dinner (~13 people)",
+          "details": "📍 <a href='https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin' target='_blank'>Lamberts Downtown Barbecue</a><br>401 W 2nd St, Austin, TX 78701<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd, Andy, Noelle, Sarah, John</small>",
+          "type": "meal"
+        },
+        {
+          "time": "Late Night",
+          "title": "Hit the Town",
+          "details": "📍 Explore Austin nightlife",
+          "type": "nightlife"
+        }
+      ]
+    },
+    {
+      "id": "day2",
+      "title": "🌤️ FRI OCT 3 - ACL Day 1",
+      "events": [
+        {
+          "time": "12:00 PM",
+          "title": "Brunch on Lake Austin (~20 people)",
+          "details": "📍 <a href='https://maps.google.com/?q=Quince+Lakehouse+Austin' target='_blank'>Quince Lakehouse</a><br>4404 Eck Ln, Austin, TX 78734<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
+          "type": "meal"
+        },
+        {
+          "time": "2:00 PM",
+          "title": "<span class='highlight'>ACL Music Festival - Day 1</span>",
+          "details": "📍 <a href='https://maps.google.com/?q=Zilker+Park+Austin' target='_blank'>Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Gates open at 12 PM",
+          "type": "festival"
+        },
+        {
+          "time": "Late Night",
+          "title": "Late Night",
+          "details": "📍 Post-festival exploration - see where the night takes us!",
+          "type": "nightlife"
+        }
+      ]
+    },
+    {
+      "id": "day3",
+      "title": "☀️ SAT OCT 4 - ACL Day 2",
+      "events": [
+        {
+          "time": "12:00 PM",
+          "title": "Party Bus Pickup",
+          "details": "📍 Hotel pickup for BBQ lunch",
+          "type": "general"
+        },
+        {
+          "time": "12:30 PM",
+          "title": "BBQ Lunch (~20 people)",
+          "details": "📍 <a href='https://maps.google.com/?q=Salt+Lick+BBQ+Austin' target='_blank'>Salt Lick BBQ</a><br>18300 FM 1826, Austin, TX 78737<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
+          "type": "meal"
+        },
+        {
+          "time": "2:00 PM",
+          "title": "<span class='highlight'>ACL Music Festival - Day 2</span>",
+          "details": "📍 <a href='https://maps.google.com/?q=Zilker+Park+Austin' target='_blank'>Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Gates open at 12 PM",
+          "type": "festival"
+        },
+        {
+          "time": "After Festival",
+          "title": "Disco Lines After Party",
+          "details": "📍 <a href='https://maps.google.com/?q=Disco+Lines+Austin' target='_blank'>Disco Lines</a><br>We have tickets for everyone - let us know if you can't make it!",
+          "type": "nightlife"
+        }
+      ]
+    },
+    {
+      "id": "day4",
+      "title": "🌤️ SUN OCT 5 - ACL Day 3",
+      "events": [
+        {
+          "time": "11:00 AM",
+          "title": "Recovery Brunch & Birthday Celebration (~18 people)",
+          "details": "📍 <a href='https://maps.google.com/?q=Jacoby's+Restaurant+Austin' target='_blank'>Jacoby's Restaurant</a><br>3235 Bee Caves Rd, Austin, TX 78746<br>Steakhouse, Southern Food & Brunch - A great place to lick our wounds and celebrate!<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
+          "type": "meal"
+        },
+        {
+          "time": "2:00 PM",
+          "title": "<span class='highlight'>ACL Music Festival - Day 3</span>",
+          "details": "📍 <a href='https://maps.google.com/?q=Zilker+Park+Austin' target='_blank'>Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Final day!",
+          "type": "festival"
+        },
+        {
+          "time": "Evening",
+          "title": "See Where the Night Takes Us",
+          "details": "📍 Spontaneous fun - join for any or all activities!",
+          "type": "nightlife"
+        }
+      ]
+    },
+    {
+      "id": "day5",
+      "title": "🌧️ MON OCT 6 - Departure Day",
+      "events": [
+        {
+          "time": "Breakfast",
+          "title": "Breakfast (~16 people)",
+          "details": "📍 Location TBD - Final meal together<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey</small>",
+          "type": "meal"
+        },
+        {
+          "time": "Afternoon",
+          "title": "Departures",
+          "details": "📍 Various times - Safe travels everyone!",
+          "type": "general"
+        }
+      ]
+    }
+  ],
+  "attendees": [
+    {
+      "name": "Ash & Mandy",
+      "arrival": "Thursday 1:35 PM - American Airlines #1746",
+      "departure": "Monday 2:15 PM - American Airlines #0670",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Graham & Sara",
+      "arrival": "Thursday 1:35 PM - American Airlines #1746",
+      "departure": "Monday 2:15 PM - American Airlines #0670",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Adam",
+      "arrival": "Thursday 1:35 PM - Flight #1746",
+      "departure": "Monday 2:15 PM - Flight #0670",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Neil & Shannon",
+      "arrival": "~Thursday afternoon",
+      "departure": "~Saturday afternoon",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Matt & Pavand",
+      "arrival": "~Thursday evening",
+      "departure": "~Sunday early",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Leia",
+      "arrival": "~Friday 2 PM",
+      "departure": "~Monday",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "David & Boyd",
+      "arrival": "~Thursday evening",
+      "departure": "~Monday",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Andy & Noelle",
+      "arrival": "~Thursday",
+      "departure": "TBD",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Sarah & John McFadden",
+      "arrival": "~Thursday 11 PM",
+      "departure": "~Monday",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Marc & Beth",
+      "arrival": "~Friday 2 PM",
+      "departure": "~Monday",
+      "hotel": "The LINE Austin"
+    },
+    {
+      "name": "Clayon & Korey",
+      "arrival": "~Friday afternoon",
+      "departure": "~Monday",
+      "hotel": "Fairfield by Marriott Inn & Suites Austin Downtown"
+    },
+    {
+      "name": "Sean & Elizabeth",
+      "arrival": "~Friday",
+      "departure": "~Sunday",
+      "hotel": "Fairfield by Marriott Inn & Suites Austin Downtown"
+    }
+  ],
+  "info": {
+    "festival": {
+      "title": "🎫 ACL Festival",
+      "details": [
+        "• Tickets: Weekend passes required",
+        "• Location: Zilker Park", 
+        "• Gates open: 12 PM daily",
+        "• Download the ACL app:",
+        "&nbsp;&nbsp;- iPhone: <a href='https://apps.apple.com/app/acl-music-festival/id915794516' target='_blank'>App Store</a>",
+        "&nbsp;&nbsp;- Android: <a href='https://play.google.com/store/apps/details?id=com.greencopper.austincitylimits' target='_blank'>Google Play</a>",
+        "• Rideshare drop-offs:",
+        "&nbsp;&nbsp;- Lady Bird Entrance: Veterans Drive (under MoPac bridge)",
+        "&nbsp;&nbsp;- Barton Springs East: Lee Barton Drive",
+        "&nbsp;&nbsp;- Barton Springs West: Wallingwood Drive"
+      ]
+    },
+    "gaPlus": {
+      "title": "✨ GA Plus Benefits",
+      "details": [
+        "• Access to exclusive GA+ lounge by Ladybird Stage",
+        "• Shaded seating and relaxed atmosphere",
+        "• Air-conditioned restrooms",
+        "• Full-service bar (for purchase)",
+        "• Dedicated food vendors (for purchase)",
+        "• Expedited festival entry lanes",
+        "• Elevated viewing areas",
+        "• All General Admission benefits included"
+      ]
+    },
+    "accommodations": {
+      "title": "🏨 Accommodations",
+      "hotels": [
+        {
+          "name": "The LINE Austin",
+          "address": "111 E Cesar Chavez St, Austin, TX 78701",
+          "link": "https://maps.google.com/?q=The+LINE+Austin"
+        },
+        {
+          "name": "Fairfield by Marriott Inn & Suites Austin Downtown", 
+          "address": "300 E 4th St, Austin, TX 78701",
+          "link": "https://maps.google.com/?q=Fairfield+by+Marriott+Inn+Suites+Austin+Downtown"
+        }
+      ]
+    },
+    "locations": [
+      {
+        "name": "The LINE Austin",
+        "address": "111 E Cesar Chavez St",
+        "link": "https://maps.google.com/?q=The+LINE+Austin"
+      },
+      {
+        "name": "Zilker Park (ACL)",
+        "address": "2100 Barton Springs Rd", 
+        "link": "https://maps.google.com/?q=Zilker+Park+Austin"
+      },
+      {
+        "name": "Lamberts BBQ",
+        "address": "401 W 2nd St",
+        "link": "https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin"
+      },
+      {
+        "name": "Quince Lakehouse",
+        "address": "4404 Eck Ln",
+        "link": "https://maps.google.com/?q=Quince+Lakehouse+Austin"
+      },
+      {
+        "name": "Jacoby's Restaurant",
+        "address": "3235 Bee Caves Rd",
+        "link": "https://maps.google.com/?q=Jacoby's+Restaurant+Austin"
+      },
+      {
+        "name": "Town Lake",
+        "address": "Lady Bird Lake Trail",
+        "link": "https://maps.google.com/?q=Town+Lake+Austin"
+      }
+    ],
+    "walkingTimes": {
+      "fromLine": {
+        "title": "⏰ Walking Times from The LINE Austin",
+        "times": [
+          "🚶‍♂️ To Zilker Park (ACL): ~20 minutes",
+          "🚶‍♂️ To Lamberts BBQ: ~8 minutes", 
+          "🚶‍♂️ To Town Lake: ~3 minutes",
+          "🚶‍♂️ To Quince Lakehouse: ~30 min drive (recommend rideshare)",
+          "🚶‍♂️ To Jacoby's Restaurant: ~40 minutes (recommend rideshare)"
+        ]
+      },
+      "fromFairfield": {
+        "title": "⏰ Walking Times from Fairfield Marriott",
+        "times": [
+          "🚶‍♂️ To Zilker Park (ACL): ~25 minutes",
+          "🚶‍♂️ To Lamberts BBQ: ~12 minutes",
+          "🚶‍♂️ To Town Lake: ~5 minutes", 
+          "🚶‍♂️ To The LINE Austin: ~6 minutes",
+          "🚶‍♂️ To Quince Lakehouse: ~30 min drive (recommend rideshare)",
+          "🚶‍♂️ To Jacoby's Restaurant: ~45 minutes (recommend rideshare)"
+        ]
+      }
+    },
+    "transportation": {
+      "title": "🚗 Transportation",
+      "details": [
+        "• Airport: AUS (Austin-Bergstrom)",
+        "• Rideshare: Uber/Lyft available",
+        "• Sam's Transportation Austin (Saturday Salt Lick)"
+      ]
+    },
+    "emergency": {
+      "title": "☎️ Emergency Contacts",
+      "details": [
+        "• Trip Organizer: Your name & number",
+        "• Local Emergency: 911",
+        "• Non-emergency: 311"
+      ]
+    }
+  }
+}
