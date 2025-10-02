@@ -496,7 +496,20 @@ function toggleTheme() {
     }
 }
 
+// Cache busting function
+function addCacheBusting() {
+    const timestamp = new Date().getTime();
+    
+    // Update CSS link with timestamp
+    const cssLink = document.querySelector('link[rel="stylesheet"]');
+    if (cssLink) {
+        const href = cssLink.href.split('?')[0]; // Remove existing query params
+        cssLink.href = `${href}?v=${timestamp}`;
+    }
+}
+
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    addCacheBusting();
     window.aclApp = new ACLApp();
 });
