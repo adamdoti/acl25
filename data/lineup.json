@@ -1,0 +1,86 @@
+{
+    "festival": {
+      "name": "Austin City Limits Music Festival 2025 - Weekend 1",
+      "dates": "October 3-5, 2025",
+      "location": "Zilker Park, Austin, TX"
+    },
+    "friday": {
+      "title": "Friday, October 3, 2025",
+      "headliners": [
+        { "name": "Hozier", "time": "8:15 PM", "stage": "T-Mobile Stage" },
+        { "name": "Luke Combs", "time": "8:30 PM", "stage": "American Express Stage" }
+      ],
+      "artists": [
+        { "name": "Asleep at the Wheel", "time": "12:45 PM - 1:30 PM", "stage": "T-Mobile Stage", "note": "Legendary group cemented in Texas music history" },
+        { "name": "The Animeros", "time": "1:15 PM - 2:00 PM", "stage": "Tito's Handmade Vodka Stage" },
+        { "name": "Good Neighbors", "time": "2:15 PM - 3:00 PM", "stage": "T-Mobile Stage" },
+        { "name": "Tanner Usrey", "time": "2:45 PM - 3:30 PM", "stage": "American Express Stage" },
+        { "name": "Panda Bear", "time": "3:30 PM - 4:30 PM", "stage": "Lady Bird Stage" },
+        { "name": "King Princess", "time": "4:00 PM - 5:00 PM", "stage": "T-Mobile Stage" },
+        { "name": "Dylan Gossett", "time": "4:30 PM - 5:30 PM", "stage": "American Express Stage", "note": "Country singer-songwriter with heart-wrenching lyrics" },
+        { "name": "Confidence Man", "time": "6:30 PM - 7:30 PM", "stage": "Tito's Handmade Vodka Stage" },
+        { "name": "Role Model", "time": "6:00 PM - 7:00 PM", "stage": "T-Mobile Stage" },
+        { "name": "Cage the Elephant", "time": "6:30 PM - 7:30 PM", "stage": "American Express Stage" },
+        { "name": "Dr. Dog", "time": "7:30 PM - 8:30 PM", "stage": "Lady Bird Stage" },
+        { "name": "Maren Morris", "time": "7:30 PM - 8:30 PM", "stage": "Beatbox Stage", "note": "Weekend 1 exclusive" }
+      ]
+    },
+    "saturday": {
+      "title": "Saturday, October 4, 2025",
+      "headliners": [
+        { "name": "The Strokes", "time": "8:30 PM", "stage": "T-Mobile Stage" },
+        { "name": "Sabrina Carpenter", "time": "8:35 PM", "stage": "American Express Stage" }
+      ],
+      "artists": [
+        { "name": "Barton Hills Choir", "time": "12:15 PM - 12:45 PM", "stage": "Austin Kiddie Limits Stage" },
+        { "name": "S.L. Houser", "time": "12:15 PM - 12:45 PM", "stage": "BMI Stage", "note": "Austin multi-instrumentalist and singer-songwriter" },
+        { "name": "Hotline TNT", "time": "12:45 PM - 1:30 PM", "stage": "T-Mobile Stage" },
+        { "name": "Sydney Rose", "time": "1:00 PM - 1:45 PM", "stage": "American Express Stage" },
+        { "name": "Next of Kin", "time": "1:00 PM - 1:45 PM", "stage": "Tito's Handmade Vodka Stage" },
+        { "name": "INOHA", "time": "1:30 PM - 2:15 PM", "stage": "BMI Stage", "note": "San Antonio surf punk band" },
+        { "name": "Yoke Lore", "time": "1:30 PM - 2:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Spacey Jane", "time": "2:15 PM - 3:15 PM", "stage": "T-Mobile Stage" },
+        { "name": "Olivia Dean", "time": "2:30 PM - 3:30 PM", "stage": "American Express Stage" },
+        { "name": "Clover County", "time": "3:15 PM - 4:15 PM", "stage": "BMI Stage" },
+        { "name": "Ocean Alley", "time": "3:15 PM - 4:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Modest Mouse", "time": "4:15 PM - 5:15 PM", "stage": "T-Mobile Stage", "note": "Weekend 1 exclusive - Indie rock legends" },
+        { "name": "Marina", "time": "4:30 PM - 5:30 PM", "stage": "American Express Stage" },
+        { "name": "Latin Mafia", "time": "5:15 PM - 6:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Magdalena Bay", "time": "5:30 PM - 6:30 PM", "stage": "Lady Bird Stage" },
+        { "name": "The Backseat Lovers", "time": "6:15 PM - 7:15 PM", "stage": "T-Mobile Stage", "note": "Weekend 1 exclusive" },
+        { "name": "LP Giobbi", "time": "6:30 PM - 7:30 PM", "stage": "Tito's Handmade Vodka Stage", "note": "DJ and founder of Femme House" },
+        { "name": "Doechii", "time": "6:30 PM - 7:25 PM", "stage": "American Express Stage", "note": "Award-winning rapper and singer" },
+        { "name": "Sammy Virji", "time": "7:15 PM - 8:15 PM", "stage": "Miller Lite Stage", "note": "Weekend 1 exclusive" },
+        { "name": "Djo", "time": "7:30 PM - 8:30 PM", "stage": "Lady Bird Stage" }
+      ]
+    },
+    "sunday": {
+      "title": "Sunday, October 5, 2025",
+      "headliners": [
+        { "name": "The Killers", "time": "8:30 PM", "stage": "American Express Stage", "note": "⭐ Replaced Doja Cat as headliner (announced Aug 29, 2025)" },
+        { "name": "John Summit", "time": "8:15 PM", "stage": "T-Mobile Stage" }
+      ],
+      "artists": [
+        { "name": "Aaron Page", "time": "12:15 PM - 12:45 PM", "stage": "BMI Stage" },
+        { "name": "Lamont Landers", "time": "12:45 PM - 1:30 PM", "stage": "T-Mobile Stage" },
+        { "name": "Case Oats", "time": "1:00 PM - 1:45 PM", "stage": "American Express Stage" },
+        { "name": "Chezile", "time": "1:30 PM - 2:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Tyler Ballgame", "time": "1:30 PM - 2:15 PM", "stage": "BMI Stage" },
+        { "name": "Geto Gala", "time": "1:45 PM - 2:30 PM", "stage": "Beatbox Stage", "note": "Austin duo with energetic live performances" },
+        { "name": "Anderson East", "time": "2:15 PM - 3:15 PM", "stage": "T-Mobile Stage" },
+        { "name": "Julie", "time": "2:30 PM - 3:30 PM", "stage": "American Express Stage" },
+        { "name": "CA7RIEL & Paco Amoroso", "time": "2:30 PM - 3:30 PM", "stage": "Beatbox Stage", "note": "Blending jazz, EDM, trap, hip-hop, and Latin pop" },
+        { "name": "Chuwi", "time": "3:15 PM - 4:15 PM", "stage": "BMI Stage" },
+        { "name": "The Dare", "time": "3:15 PM - 4:15 PM", "stage": "Miller Lite Stage", "note": "Indie sleaze revival" },
+        { "name": "Rainbow Kitten Surprise", "time": "4:15 PM - 5:15 PM", "stage": "T-Mobile Stage" },
+        { "name": "Wet Leg", "time": "4:30 PM - 5:30 PM", "stage": "American Express Stage", "note": "British indie rock duo" },
+        { "name": "Disco Lines", "time": "5:15 PM - 6:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Passion Pit", "time": "5:30 PM - 6:30 PM", "stage": "Tito's Handmade Vodka Stage" },
+        { "name": "Feid", "time": "6:15 PM - 7:15 PM", "stage": "T-Mobile Stage" },
+        { "name": "T-Pain", "time": "6:30 PM - 7:30 PM", "stage": "American Express Stage", "note": "Bringing millennial nostalgia" },
+        { "name": "Polo & Pan", "time": "7:15 PM - 8:15 PM", "stage": "Miller Lite Stage" },
+        { "name": "Mk.gee", "time": "7:30 PM - 8:30 PM", "stage": "Lady Bird Stage" },
+        { "name": "Phantogram", "time": "7:30 PM - 8:30 PM", "stage": "Beatbox Stage", "note": "Electronic rock duo" }
+      ]
+    }
+  }

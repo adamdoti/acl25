@@ -233,78 +233,94 @@
   ],
   "lineup": {
     "friday": {
-      "title": "🎵 Friday October 3, 2025",
+      "title": "🎵 Friday, October 3, 2025",
       "headliners": [
-        {"name": "Tyler, The Creator", "time": "9:30 PM"},
-        {"name": "Hozier", "time": "8:00 PM"},
-        {"name": "Luke Combs", "time": "7:15 PM"}
+        {"name": "Hozier", "time": "8:15 PM", "note": "Irish sensation behind global anthem 'Take Me to Church' and 2024's 'Unreal Unearth' tour"},
+        {"name": "Luke Combs", "time": "8:30 PM", "note": "Country superstar whose debut album spent 50 weeks at #1 on Billboard"}
       ],
       "artists": [
-        {"name": "Cage the Elephant", "time": "6:00 PM"},
-        {"name": "Empire of the Sun", "time": "5:15 PM"},
-        {"name": "Glass Animals", "time": "4:30 PM"},
-        {"name": "Tinashe", "time": "3:45 PM"},
-        {"name": "The Marias", "time": "3:00 PM"},
-        {"name": "Kali Uchis", "time": "2:30 PM"},
-        {"name": "Bad Bunny", "time": "2:00 PM"},
-        {"name": "Parcels", "time": "1:30 PM"},
-        {"name": "Fontaines D.C.", "time": "1:00 PM"},
-        {"name": "Remi Wolf", "time": "12:30 PM"},
-        {"name": "Clairo", "time": "12:15 PM"},
-        {"name": "Khruangbin", "time": "12:00 PM"},
-        {"name": "070 Shake", "time": "11:45 AM"},
-        {"name": "Sampha", "time": "11:30 AM"}
+        {"name": "Asleep at the Wheel", "time": "12:45 PM - 1:30 PM", "note": "Weekend 1 Exclusive - Texas legends keeping Western swing alive for 50+ years"},
+        {"name": "The Animeros", "time": "1:15 PM - 2:00 PM"},
+        {"name": "Good Neighbors", "time": "2:15 PM - 3:00 PM"},
+        {"name": "Tanner Usrey", "time": "2:45 PM - 3:30 PM"},
+        {"name": "Panda Bear", "time": "3:30 PM - 4:30 PM"},
+        {"name": "King Princess", "time": "4:00 PM - 5:00 PM"},
+        {"name": "Dylan Gossett", "time": "4:30 PM - 5:30 PM", "note": "Rising country star whose 'Coal' went viral on TikTok in 2024"},
+        {"name": "Confidence Man", "time": "6:30 PM - 7:30 PM"},
+        {"name": "Role Model", "time": "6:00 PM - 7:00 PM"},
+        {"name": "Cage the Elephant", "time": "6:30 PM - 7:30 PM"},
+        {"name": "Dr. Dog", "time": "7:30 PM - 8:30 PM"},
+        {"name": "Maren Morris", "time": "7:30 PM - 8:30 PM", "note": "Weekend 1 Exclusive - Country crossover star behind 'The Middle' with Zedd"}
       ]
     },
     "saturday": {
-      "title": "🎶 Saturday October 4, 2025", 
+      "title": "🎶 Saturday, October 4, 2025",
       "headliners": [
-        {"name": "Sabrina Carpenter", "time": "9:30 PM"},
-        {"name": "The Strokes", "time": "8:00 PM"},
-        {"name": "Future", "time": "7:15 PM"}
+        {"name": "The Strokes", "time": "8:30 PM", "note": "Garage rock pioneers whose 'Is This It' defined early 2000s indie music"},
+        {"name": "Sabrina Carpenter", "time": "8:35 PM", "note": "Pop sensation who evolved from Disney star to chart-topper with 'Short n' Sweet' album"}
       ],
       "artists": [
-        {"name": "Doechii", "time": "6:00 PM"},
-        {"name": "Chappell Roan", "time": "5:15 PM"},
-        {"name": "Benson Boone", "time": "4:30 PM"},
-        {"name": "Victoria Monét", "time": "3:45 PM"},
-        {"name": "Maggie Rogers", "time": "3:00 PM"},
-        {"name": "Tems", "time": "2:30 PM"},
-        {"name": "Wallows", "time": "2:00 PM"},
-        {"name": "Japanese Breakfast", "time": "1:30 PM"},
-        {"name": "Turnstile", "time": "1:00 PM"},
-        {"name": "Steve Lacy", "time": "12:30 PM"},
-        {"name": "Wet Leg", "time": "12:15 PM"},
-        {"name": "King Krule", "time": "12:00 PM"},
-        {"name": "Daniel Caesar", "time": "11:45 AM"},
-        {"name": "Raye", "time": "11:30 AM"}
+        {"name": "Barton Hills Choir", "time": "12:15 PM - 12:45 PM"},
+        {"name": "S.L. Houser", "time": "12:15 PM - 12:45 PM", "note": "Weekend 1 Exclusive - Austin local multi-instrumentalist and singer-songwriter"},
+        {"name": "Hotline TNT", "time": "12:45 PM - 1:30 PM"},
+        {"name": "Sydney Rose", "time": "1:00 PM - 1:45 PM"},
+        {"name": "Next of Kin", "time": "1:00 PM - 1:45 PM"},
+        {"name": "INOHA", "time": "1:30 PM - 2:15 PM", "note": "Weekend 1 Exclusive - San Antonio surf punk band making waves in Texas"},
+        {"name": "Yoke Lore", "time": "1:30 PM - 2:15 PM"},
+        {"name": "Spacey Jane", "time": "2:15 PM - 3:15 PM"},
+        {"name": "Olivia Dean", "time": "2:30 PM - 3:30 PM"},
+        {"name": "Clover County", "time": "3:15 PM - 4:15 PM"},
+        {"name": "Ocean Alley", "time": "3:15 PM - 4:15 PM"},
+        {"name": "Modest Mouse", "time": "4:15 PM - 5:15 PM", "note": "Weekend 1 Exclusive - Indie rock veterans celebrating 30+ years with 'Float On'"},
+        {"name": "Marina", "time": "4:30 PM - 5:30 PM"},
+        {"name": "Latin Mafia", "time": "5:15 PM - 6:15 PM"},
+        {"name": "Magdalena Bay", "time": "5:30 PM - 6:30 PM"},
+        {"name": "The Backseat Lovers", "time": "6:15 PM - 7:15 PM", "note": "Weekend 1 Exclusive - Utah indie rockers behind viral hit 'Kilby Girl'"},
+        {"name": "LP Giobbi", "time": "6:30 PM - 7:30 PM", "note": "Piano house pioneer and founder of Femme House movement"},
+        {"name": "Doechii", "time": "6:30 PM - 7:25 PM", "note": "Rising rap star who went viral with 'Yucky Blucky Fruitcake' in 2024"},
+        {"name": "Sammy Virji", "time": "7:15 PM - 8:15 PM", "note": "Weekend 1 Exclusive - UK garage and bass music producer taking over dance floors"},
+        {"name": "Djo", "time": "7:30 PM - 8:30 PM"}
       ]
     },
     "sunday": {
-      "title": "🎤 Sunday October 5, 2025",
+      "title": "🎤 Sunday, October 5, 2025",
       "headliners": [
-        {"name": "Doja Cat", "time": "9:30 PM"},
-        {"name": "John Summit", "time": "8:00 PM"},
-        {"name": "Noah Kahan", "time": "7:15 PM"}
+        {"name": "The Killers", "time": "8:30 PM", "note": "⭐ Replaced Doja Cat as headliner - Las Vegas rock legends behind 'Mr. Brightside'"},
+        {"name": "John Summit", "time": "8:15 PM", "note": "Chicago house music star whose 'Deep End' became a pandemic dance anthem"}
       ],
       "artists": [
-        {"name": "Reneé Rapp", "time": "6:00 PM"},
-        {"name": "Tate McRae", "time": "5:15 PM"},
-        {"name": "Vampire Weekend", "time": "4:30 PM"},
-        {"name": "FKA twigs", "time": "3:45 PM"},
-        {"name": "Lana Del Rey", "time": "3:00 PM"},
-        {"name": "Charli XCX", "time": "2:30 PM"},
-        {"name": "Mac DeMarco", "time": "2:00 PM"},
-        {"name": "Phoenix", "time": "1:30 PM"},
-        {"name": "Caroline Polachek", "time": "1:00 PM"},
-        {"name": "Boygenius", "time": "12:30 PM"},
-        {"name": "The 1975", "time": "12:15 PM"},
-        {"name": "Phoebe Bridgers", "time": "12:00 PM"},
-        {"name": "Tyler Cole", "time": "11:45 AM"},
-        {"name": "Benee", "time": "11:30 AM"}
+        {"name": "Aaron Page", "time": "12:15 PM - 12:45 PM"},
+        {"name": "Lamont Landers", "time": "12:45 PM - 1:30 PM"},
+        {"name": "Case Oats", "time": "1:00 PM - 1:45 PM"},
+        {"name": "Chezile", "time": "1:30 PM - 2:15 PM"},
+        {"name": "Tyler Ballgame", "time": "1:30 PM - 2:15 PM"},
+        {"name": "Geto Gala", "time": "1:45 PM - 2:30 PM", "note": "Weekend 1 Exclusive - Austin duo bringing high-energy Latin-influenced performances"},
+        {"name": "Anderson East", "time": "2:15 PM - 3:15 PM"},
+        {"name": "Julie", "time": "2:30 PM - 3:30 PM"},
+        {"name": "CA7RIEL & Paco Amoroso", "time": "2:30 PM - 3:30 PM", "note": "Argentine duo blending jazz, EDM, trap, and Latin pop in innovative ways"},
+        {"name": "Chuwi", "time": "3:15 PM - 4:15 PM"},
+        {"name": "The Dare", "time": "3:15 PM - 4:15 PM", "note": "Leading the indie sleaze revival movement with danceable electronic rock"},
+        {"name": "Rainbow Kitten Surprise", "time": "4:15 PM - 5:15 PM"},
+        {"name": "Wet Leg", "time": "4:30 PM - 5:30 PM", "note": "British duo who became overnight sensations with viral hit 'Chaise Longue'"},
+        {"name": "Disco Lines", "time": "5:15 PM - 6:15 PM"},
+        {"name": "Passion Pit", "time": "5:30 PM - 6:30 PM"},
+        {"name": "Feid", "time": "6:15 PM - 7:15 PM"},
+        {"name": "T-Pain", "time": "6:30 PM - 7:30 PM", "note": "Auto-Tune pioneer bringing millennial nostalgia with hits like 'Buy U a Drank'"},
+        {"name": "Polo & Pan", "time": "7:15 PM - 8:15 PM"},
+        {"name": "Mk.gee", "time": "7:30 PM - 8:30 PM"},
+        {"name": "Phantogram", "time": "7:30 PM - 8:30 PM", "note": "Weekend 1 Exclusive - Electronic rock duo blending dreamy vocals with hip-hop beats"}
       ]
     }
   },
+  "merch": [
+    {
+      "title": "The Fidgets poster",
+      "type": "Limited Edition NFT Posters",
+      "description": "",
+      "cost": "$0.00",
+      "image": "./images/fidgets-poster.png"
+    }
+  ],
   "info": {
     "festival": {
       "title": "🎫 ACL Festival",

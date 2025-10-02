@@ -362,7 +362,7 @@ body {
 }
 
 .weather-widget h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -384,14 +384,14 @@ body {
 }
 
 .weather-day-name {
-    font-size: 0.8em;
+    font-size: 1.0em;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 8px;
 }
 
 .weather-icon {
-    font-size: 1.5em;
+    font-size: 2.0em;
     margin-bottom: 8px;
 }
 
@@ -402,13 +402,13 @@ body {
 }
 
 .temp-high {
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: 600;
     color: white;
 }
 
 .temp-low {
-    font-size: 0.8em;
+    font-size: 1.0em;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -542,10 +542,24 @@ h2 {
     margin-bottom: 4px;
 }
 
+.artist-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .artist-name {
     font-weight: 500;
     color: var(--text-primary);
     font-size: 0.95em;
+}
+
+.artist-note {
+    font-size: 0.75em;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 2px;
+    line-height: 1.2;
 }
 
 .headliner-name {
@@ -553,6 +567,10 @@ h2 {
     font-size: 1.2em;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.headliner-item .artist-note {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .artist-time {
@@ -710,6 +728,76 @@ h2 {
     font-size: 0.8em;
     margin: 0px;
     padding: 0px;
+}
+
+/* Merch Styles */
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.merch-card {
+    background: var(--bg-card-transparent);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.merch-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.merch-image {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.merch-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.merch-card:hover .merch-image img {
+    transform: scale(1.02);
+}
+
+.merch-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.merch-type {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.merch-description {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.merch-cost {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-align: right;
 }
 
 /* Footer */

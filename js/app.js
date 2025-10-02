@@ -40,6 +40,7 @@ class ACLApp {
         this.renderSchedule();
         this.renderAttendees(); 
         this.renderLineup();
+        this.renderMerch();
         this.renderInfo();
     }
 
@@ -155,14 +156,20 @@ class ACLApp {
                     <div class="lineup-list">
                         ${dayData.headliners.map(artist => 
                             `<div class="lineup-item headliner-item">
-                                <span class="artist-name headliner-name">${artist.name}</span>
+                                <div class="artist-info">
+                                    <span class="artist-name headliner-name">${artist.name}</span>
+                                    ${artist.note ? `<div class="artist-note">${artist.note}</div>` : ''}
+                                </div>
                                 <span class="artist-time">${artist.time}</span>
                             </div>`
                         ).join('')}
                         
                         ${dayData.artists.map(artist => 
                             `<div class="lineup-item">
-                                <span class="artist-name">${artist.name}</span>
+                                <div class="artist-info">
+                                    <span class="artist-name">${artist.name}</span>
+                                    ${artist.note ? `<div class="artist-note">${artist.note}</div>` : ''}
+                                </div>
                                 <span class="artist-time">${artist.time}</span>
                             </div>`
                         ).join('')}
@@ -178,6 +185,33 @@ class ACLApp {
         `;
         
         return lineupHtml;
+    }
+
+    renderMerch() {
+        const merchContent = document.getElementById('merch');
+        if (!merchContent) return;
+
+        merchContent.innerHTML = `
+            <h2>Merch Store</h2>
+            <div class="merch-grid"></div>
+        `;
+
+        const grid = merchContent.querySelector('.merch-grid');
+        
+        this.data.merch.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'merch-card fade-in';
+            
+            card.innerHTML = `
+                ${item.image ? `<div class="merch-image"><img src="${item.image}" alt="${item.title}" /></div>` : ''}
+                <div class="merch-title">${item.title}</div>
+                <div class="merch-type">${item.type}</div>
+                ${item.description ? `<div class="merch-description">${item.description}</div>` : ''}
+                <div class="merch-cost">${item.cost}</div>
+            `;
+            
+            grid.appendChild(card);
+        });
     }
 
     renderInfo() {
