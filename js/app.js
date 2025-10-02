@@ -105,7 +105,7 @@ class ACLApp {
         if (!attendeesContent) return;
 
         attendeesContent.innerHTML = `
-            <h2>Our Amazing Group</h2>
+            <h2>Friends</h2>
             <div class="attendee-grid"></div>
         `;
 
@@ -115,11 +115,16 @@ class ACLApp {
             const card = document.createElement('div');
             card.className = 'attendee-card fade-in';
             
+            // Add ACL badge for Ash & Mandy
+            const aclBadge = attendee.name === 'Ash & Mandy' ? 
+                '<div class="acl-badge">ACL x 5</div>' : '';
+            
             card.innerHTML = `
                 <div class="attendee-name">${attendee.name}</div>
                 <div class="attendee-info">✈️ Arrives: ${attendee.arrival}</div>
                 <div class="attendee-info">🛫 Departs: ${attendee.departure}</div>
                 <div class="attendee-info">🏨 Hotel: ${attendee.hotel}</div>
+                ${aclBadge}
             `;
             
             grid.appendChild(card);
