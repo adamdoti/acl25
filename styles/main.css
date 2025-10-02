@@ -1,7 +1,12 @@
-.footer-disclaimer {
-  text-align: center;
-  font-size: 0.8em;
-  color: gray;
-  margin-top: 20px;
-  padding: 20px 0;
+/* Updated styles from commit 781715c03d35704ac8dbb20e9ea71ac12bfb833e */
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
+
+h1 {
+    color: #333;
+}
+
+/* Add more styles here */
