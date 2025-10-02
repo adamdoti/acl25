@@ -116,9 +116,17 @@ class ACLApp {
             const card = document.createElement('div');
             card.className = 'attendee-card fade-in';
             
-            // Add ACL badge for Ash & Mandy
-            const aclBadge = attendee.name === 'Ash & Mandy' ? 
-                '<div class="acl-badge">ACL x 5</div>' : '';
+            // Add ACL badge for all attendees
+            let aclBadge = '';
+            let badgeClass = 'acl-badge';
+            
+            if (attendee.name === 'Ash & Mandy') {
+                aclBadge = '<div class="acl-badge acl-badge-5">ACL x 5</div>';
+            } else if (attendee.name === 'Adam') {
+                aclBadge = '<div class="acl-badge acl-badge-2">ACL x 2</div>';
+            } else {
+                aclBadge = '<div class="acl-badge acl-badge-unknown">ACL x ?</div>';
+            }
             
             card.innerHTML = `
                 <div class="attendee-name">${attendee.name}</div>

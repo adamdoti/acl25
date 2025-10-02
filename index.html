@@ -11,6 +11,7 @@
     <meta http-equiv="Expires" content="0">
     
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="styles/splash-quote.css">
     <meta name="description" content="Austin City Limits Music Festival 2025 - Group Trip Planning">
     <meta name="theme-color" content="#0a1419">
 </head>
@@ -81,5 +82,14 @@
     
     <!-- JavaScript -->
     <script src="./js/app.js"></script>
+    <!-- just before </body> -->
+<div id="splash-quote-overlay" role="dialog" aria-live="polite" aria-label="Loading quote">
+    <div class="sq-card">
+      <blockquote class="sq-text" id="splash-quote-text">Loading…</blockquote>
+      <div class="sq-attrib" id="splash-quote-author">—</div>
+    </div>
+  </div>
+  
+  <script type="module" src="js/splash-quote.js"></script>
 </body>
 </html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Splash Quote Overlay Demo</title>
+
+<style>
+/* ===== Splash Quote Overlay (splash-quote.css) ===== */
+
+/* Tweak these if needed */
+:root {
+  --sq-bg: rgba(255, 255, 255, 0.8);   /* 80% opaque white */
+  --sq-text: #000;                     /* main quote color (black) */
+  --sq-attrib: #555;                   /* attribution color (dark gray) */
+  --sq-max-width: 900px;               /* max width of quote block */
+  --sq-inset: 24px;                    /* screen padding on small devices */
+  --sq-fade-delay: 5s;                 /* how long to show before auto-hide */
+  --sq-fade-dur: 400ms;                /* fade-out duration */
+}
+
+/* Fullscreen overlay */
+#splash-quote-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: var(--sq-bg);
+  backdrop-filter: blur(0px); /* feel free to increase for extra polish */
+  -webkit-tap-highlight-color: transparent;
+
+  /* Auto-hide after delay */
+  animation: sq-hide var(--sq-fade-dur) ease var(--sq-fade-delay) forwards;
+}
+
+/* Disable auto-dismiss by adding .sq-no-auto to the overlay */
+#splash-quote-overlay.sq-no-auto {
+  animation: none;
+}
+
+@keyframes sq-hide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Quote card */
+.sq-card {
+  max-width: var(--sq-max-width);
+  margin: 0 var(--sq-inset);
+  text-align: center;
+  color: var(--sq-text);
+}
+
+/* The quote itself */
+.sq-text {
+  /* Times New Roman stack, bold + italic */
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-style: italic;
+
+  /* Responsive sizing for “large, readable in seconds” */
+  font-size: clamp(28px, 6vw, 56px);
+  line-height: 1.2;
+
+  /* Keep words together nicely on small screens */
+  overflow-wrap: anywhere;
+  margin: 0;
+
+  position: relative;
+  display: inline-block; /* so big quotes hug the text block */
+  padding: 0.25em 0.35em;
+}
+
+/* Oversized decorative quotes */
+.sq-text::before,
+.sq-text::after {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--sq-text);
+  position: absolute;
+  font-size: 1.2em;       /* slightly larger than the quote text */
+  line-height: 1;
+}
+
+.sq-text::before {
+  content: "“";
+  left: -0.35em;
+  top: -0.05em;
+}
+
+.sq-text::after {
+  content: "”";
+  right: -0.35em;
+  bottom: -0.05em;
+}
+
+/* Attribution */
+.sq-attrib {
+  margin-top: 0.6em;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: clamp(14px, 2.6vw, 18px);
+  color: var(--sq-attrib);
+}
+
+/* Optional: a subtle enter animation */
+#splash-quote-overlay .sq-card {
+  animation: sq-fade-in 280ms ease-out;
+}
+
+@keyframes sq-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  #splash-quote-overlay,
+  #splash-quote-overlay .sq-card {
+    animation: none !important;
+  }
+}
+
+/* Demo page chrome (not needed in your app) */
+body {
+  min-height: 100svh;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: linear-gradient(135deg, #151515 0%, #232b2b 50%, #3d3d3d 100%);
+  color: #eee;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.demo-shell {
+  max-width: 980px;
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+}
+.demo-shell h1 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 4vw, 32px);
+}
+.demo-shell p {
+  margin: 0 0 16px;
+  color: #cfd3d7;
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: #ffffff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.secondary {
+  background: #e9eef3;
+  color: #111;
+  font-weight: 500;
+}
+kbd {
+  background: #111;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="demo-shell">
+  <h1>🔤 Splash Quote Overlay — Live Preview</h1>
+  <p>This demo shows the overlay on page load. It auto-hides after 5s or when you tap/click it. Use the buttons to re-show, shuffle genre, and toggle auto-hide.</p>
+  <div class="controls">
+    <button id="btn-reshow">Show Overlay</button>
+    <button id="btn-shuffle">Shuffle Quote</button>
+    <button id="btn-toggle-auto" class="secondary">Toggle Auto-Hide</button>
+    <button id="btn-blur" class="secondary">Toggle Background Blur</button>
+  </div>
+  <p style="margin-top:10px; font-size:14px; opacity:.8;">Tip: Press <kbd>R</kbd> to reshow, <kbd>S</kbd> to shuffle quote.</p>
+</div>
+
+<!-- Your App Content underlay (for demo) -->
+<div style="position:fixed; inset:auto 24px 24px 24px; bottom: 24px; text-align:center; opacity:.75;">
+  <small>App underlay content… imagine your home screen below the overlay.</small>
+</div>
+
+<!-- Splash Overlay -->
+<div id="splash-quote-overlay" role="dialog" aria-live="polite" aria-label="Loading quote">
+  <div class="sq-card">
+    <blockquote class="sq-text" id="splash-quote-text">Loading quote…</blockquote>
+    <div class="sq-attrib" id="splash-quote-author">—</div>
+  </div>
+</div>
+
+<script type="module">
+// === Quote data (subset for demo; you can swap in your full list or fetch JSON) ===
+const QUOTES = [
+  {"text":"After silence, that which comes nearest to expressing the inexpressible is music.","author":"Aldous Huxley","genres":["general","literature"]},
+  {"text":"One good thing about music, when it hits you, you feel no pain.","author":"Bob Marley","genres":["reggae","classic rock"]},
+  {"text":"Music washes away from the soul the dust of everyday life.","author":"Berthold Auerbach","genres":["general","literature"]},
+  {"text":"Music is the wine that fills the cup of silence.","author":"Robert Fripp","genres":["progressive rock","classic rock"]},
+  {"text":"I think music in itself is healing. It’s an explosive expression of humanity.","author":"Billy Joel","genres":["pop","rock"]},
+  {"text":"Music is the mediator between the spiritual and the sensual life.","author":"Ludwig van Beethoven","genres":["classical"]},
+  {"text":"Music is a safe kind of high.","author":"Jimi Hendrix","genres":["classic rock","psychedelic"]},
+  {"text":"Without music, life would be a mistake.","author":"Friedrich Nietzsche","genres":["general","philosophy"]},
+  {"text":"Music can change the world because it can change people.","author":"Bono","genres":["alternative rock","pop rock"]},
+  {"text":"Where words fail, music speaks.","author":"Hans Christian Andersen","genres":["general","literature"]},
+  {"text":"Music is life itself.","author":"Louis Armstrong","genres":["jazz"]},
+  {"text":"Music has healing power.","author":"Elton John","genres":["pop","rock"]},
+  {"text":"If music be the food of love, play on.","author":"William Shakespeare","genres":["general","literature"]},
+  {"text":"To listen is an effort; just to hear is no merit.","author":"Igor Stravinsky","genres":["classical"]},
+  {"text":"It’s not the notes you play; it’s the notes you don’t play.","author":"Miles Davis","genres":["jazz"]},
+  {"text":"There are two kinds of music. Good music, and the other kind.","author":"Duke Ellington","genres":["jazz"]},
+  {"text":"Punk is musical freedom.","author":"Kurt Cobain","genres":["punk","alternative rock"]},
+  {"text":"House music is disco’s revenge.","author":"Frankie Knuckles","genres":["house","dance"]},
+  {"text":"The only thing that matters is what comes out of the speakers.","author":"Jeff Mills","genres":["techno","electronic"]},
+  {"text":"To me, rock music was never meant to be safe.","author":"Trent Reznor","genres":["industrial","alternative rock"]}
+];
+
+const preferredGenres = ["festival","house","EDM","alternative rock","rap/hip-hop","industrial","drum-and-bass","classical","jazz","punk","classic rock","pop","techno","electronic","general","literature"];
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function pickRandomByGenre(arr, genre) {
+  const pool = genre ? arr.filter(q => q.genres?.includes(genre)) : arr;
+  return pickRandom(pool.length ? pool : arr);
+}
+
+function setQuote(q, chosenGenre) {
+  const qText = document.getElementById("splash-quote-text");
+  const qAuth = document.getElementById("splash-quote-author");
+  const overlay = document.getElementById("splash-quote-overlay");
+  qText.textContent = q?.text || "Music is life.";
+  qAuth.textContent = q?.author ? `— ${q.author}` : "— Unknown";
+  if (chosenGenre) overlay.setAttribute("data-genre", chosenGenre);
+}
+
+function showOverlay({auto=true}={}) {
+  const overlay = document.getElementById("splash-quote-overlay");
+  overlay.style.display = "grid";
+  overlay.style.opacity = "1";
+  overlay.style.visibility = "visible";
+  overlay.classList.toggle("sq-no-auto", !auto);
+  // retrigger CSS animation when auto=true
+  if (auto) {
+    overlay.style.animation = "none";
+    // force reflow
+    void overlay.offsetHeight;
+    overlay.style.animation = "";
+  }
+}
+
+function hideOverlay() {
+  const overlay = document.getElementById("splash-quote-overlay");
+  overlay.style.transition = "opacity 200ms ease";
+  overlay.style.opacity = "0";
+  setTimeout(() => { overlay.style.display = "none"; }, 220);
+}
+
+// Initialize on load
+const genre = pickRandom(preferredGenres);
+setQuote(pickRandomByGenre(QUOTES, genre), genre);
+
+// Dismiss on click/tap
+document.getElementById("splash-quote-overlay")?.addEventListener("click", hideOverlay);
+
+// Demo controls
+document.getElementById("btn-reshow")?.addEventListener("click", () => showOverlay({auto:true}));
+document.getElementById("btn-shuffle")?.addEventListener("click", () => {
+  const g = pickRandom(preferredGenres);
+  setQuote(pickRandomByGenre(QUOTES, g), g);
+  showOverlay({auto:false});
+});
+document.getElementById("btn-toggle-auto")?.addEventListener("click", () => {
+  const overlay = document.getElementById("splash-quote-overlay");
+  const isNoAuto = overlay.classList.toggle("sq-no-auto");
+  // provide quick feedback
+  const btn = document.getElementById("btn-toggle-auto");
+  btn.textContent = isNoAuto ? "Enable Auto-Hide" : "Disable Auto-Hide";
+  showOverlay({auto:!isNoAuto});
+});
+document.getElementById("btn-blur")?.addEventListener("click", () => {
+  const overlay = document.getElementById("splash-quote-overlay");
+  const current = getComputedStyle(overlay).backdropFilter;
+  overlay.style.backdropFilter = current === "none" || current === "0px" ? "blur(2px)" : "blur(0px)";
+});
+
+// Keyboard shortcuts
+window.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "r") showOverlay({auto:true});
+  if (e.key.toLowerCase() === "s") {
+    const g = pickRandom(preferredGenres);
+    setQuote(pickRandomByGenre(QUOTES, g), g);
+    showOverlay({auto:false});
+  }
+});
+</script>
+
+</body>
+</html>

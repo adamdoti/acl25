@@ -321,13 +321,38 @@ body {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: var(--accent-green);
     color: white;
     font-weight: bold;
     font-size: 0.7em;
     padding: 4px 8px;
     border-radius: 12px;
     text-align: center;
+}
+
+/* ACL Badge Color System - More vibrant green for higher attendance */
+.acl-badge-5 {
+    background: #00ff88; /* Most vibrant green for 5 times */
+}
+
+.acl-badge-4 {
+    background: #00e676; /* Very vibrant green for 4 times */
+}
+
+.acl-badge-3 {
+    background: #00d4aa; /* Vibrant green for 3 times */
+}
+
+.acl-badge-2 {
+    background: #4caf50; /* Medium green for 2 times */
+}
+
+.acl-badge-1 {
+    background: #81c784; /* Light green for 1 time */
+}
+
+.acl-badge-unknown {
+    background: #9e9e9e; /* Grey for unknown count */
+    color: #ffffff;
 }
 
 .attendee-name {
