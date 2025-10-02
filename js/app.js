@@ -14,6 +14,7 @@ class ACLApp {
             this.renderApp();
             this.setupEventListeners();
             this.showTab('schedule');
+            this.initializeBackgroundRotation();
         } catch (error) {
             this.showError('Failed to load app data');
             console.error('Initialization error:', error);
@@ -38,6 +39,7 @@ class ACLApp {
         this.renderNavigation();
         this.renderSchedule();
         this.renderAttendees(); 
+        this.renderLineup();
         this.renderInfo();
     }
 
@@ -59,17 +61,14 @@ class ACLApp {
         scheduleContent.innerHTML = '';
         
         this.data.schedule.forEach(day => {
-            const daySection = document.createElement('div');
-            daySection.className = 'day-section fade-in';
-            
             const dayTitle = document.createElement('div');
-            dayTitle.className = 'day-title';
+            dayTitle.className = 'day-title fade-in';
             dayTitle.textContent = day.title;
-            daySection.appendChild(dayTitle);
+            scheduleContent.appendChild(dayTitle);
 
             day.events.forEach(event => {
                 const eventDiv = document.createElement('div');
-                eventDiv.className = `event ${event.type}`;
+                eventDiv.className = `event ${event.type} fade-in`;
                 
                 const eventTime = document.createElement('div');
                 eventTime.className = 'event-time';
@@ -83,13 +82,21 @@ class ACLApp {
 
                 const eventDetails = document.createElement('div');
                 eventDetails.className = 'event-details';
-                eventDetails.innerHTML = event.details;
+                
+                // Wrap attendee names with card-names class
+                let detailsHtml = event.details;
+                if (detailsHtml.includes('<small')) {
+                    detailsHtml = detailsHtml.replace(
+                        /<small[^>]*>(.*?)<\/small>/g, 
+                        '<div class="card-names">$1</div>'
+                    );
+                }
+                
+                eventDetails.innerHTML = detailsHtml;
                 eventDiv.appendChild(eventDetails);
 
-                daySection.appendChild(eventDiv);
+                scheduleContent.appendChild(eventDiv);
             });
-
-            scheduleContent.appendChild(daySection);
         });
     }
 
@@ -119,6 +126,55 @@ class ACLApp {
         });
     }
 
+    renderLineup() {
+        const lineupContent = document.getElementById('lineup');
+        if (!lineupContent) return;
+
+        lineupContent.innerHTML = `
+            <h2>ACL 2025 Lineup</h2>
+            ${this.renderLineupDays()}
+        `;
+    }
+
+    renderLineupDays() {
+        let lineupHtml = '';
+        
+        // Render each day
+        ['friday', 'saturday', 'sunday'].forEach(day => {
+            const dayData = this.data.lineup[day];
+            
+            lineupHtml += `
+                <div class="lineup-day fade-in">
+                    <div class="lineup-day-title">${dayData.title}</div>
+                    
+                    <div class="lineup-list">
+                        ${dayData.headliners.map(artist => 
+                            `<div class="lineup-item headliner-item">
+                                <span class="artist-name headliner-name">${artist.name}</span>
+                                <span class="artist-time">${artist.time}</span>
+                            </div>`
+                        ).join('')}
+                        
+                        ${dayData.artists.map(artist => 
+                            `<div class="lineup-item">
+                                <span class="artist-name">${artist.name}</span>
+                                <span class="artist-time">${artist.time}</span>
+                            </div>`
+                        ).join('')}
+                    </div>
+                </div>
+            `;
+        });
+        
+        lineupHtml += `
+            <div class="lineup-note">
+                <p><strong>Note:</strong> This lineup is based on available information and may be updated as official details are announced. Check <a href="https://aclfestival.com" target="_blank">aclfestival.com</a> for the most current lineup.</p>
+            </div>
+        `;
+        
+        return lineupHtml;
+    }
+
     renderInfo() {
         const infoContent = document.getElementById('info');
         if (!infoContent) return;
@@ -133,15 +189,42 @@ class ACLApp {
     renderWeatherWidget() {
         let weatherHtml = `
             <div class="weather-widget">
-                <h3>🌤️ Austin Weather - October 2-6</h3>
+                <h3>🌤️ Austin Weather - Oct 2-6</h3>
+                <div class="weather-forecast">
         `;
         
         this.data.weather.forEach(day => {
-            weatherHtml += `<p>${day.date}: High ${day.high}°F, Low ${day.low}°F - ${day.condition}</p>`;
+            const dayAbbr = day.date.split(' ')[0]; // Get abbreviated day (Thu, Fri, etc.)
+            const weatherIcon = this.getWeatherIcon(day.condition);
+            
+            weatherHtml += `
+                <div class="weather-day">
+                    <div class="weather-day-name">${dayAbbr}</div>
+                    <div class="weather-icon">${weatherIcon}</div>
+                    <div class="weather-temps">
+                        <span class="temp-high">${day.high}°</span>
+                        <span class="temp-low">${day.low}°</span>
+                    </div>
+                </div>
+            `;
         });
         
-        weatherHtml += '</div>';
+        weatherHtml += `
+                </div>
+            </div>
+        `;
         return weatherHtml;
+    }
+
+    getWeatherIcon(condition) {
+        const conditionLower = condition.toLowerCase();
+        if (conditionLower.includes('sunny')) return '☀️';
+        if (conditionLower.includes('partly cloudy')) return '⛅';
+        if (conditionLower.includes('cloudy')) return '☁️';
+        if (conditionLower.includes('rain')) return '🌧️';
+        if (conditionLower.includes('storm')) return '⛈️';
+        if (conditionLower.includes('clear')) return '🌤️';
+        return '🌤️'; // Default
     }
 
     renderInfoSections() {
@@ -185,11 +268,11 @@ class ACLApp {
         // Map Container
         sectionsHtml += `
             <div class="info-section">
-                <div class="info-title">🗺️ Location Map</div>
-                <div id="mapContainer" style="width: 100%; height: 300px; background: var(--bg-card-transparent); border-radius: 8px; margin: 10px 0; position: relative; overflow: hidden; border: 1px solid var(--bg-tertiary);">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: var(--text-secondary);">
-                        <p style="margin: 0; font-size: 0.9em;">Interactive map loading...</p>
-                        <p style="margin: 5px 0 0 0; font-size: 0.8em;">Tap locations below for directions</p>
+                <div class="info-title">🗺️ Austin Area Map</div>
+                <div class="map-container">
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=30.2672,-97.7431&zoom=11&size=800x500&maptype=roadmap&markers=color:red%7Clabel:L%7C30.2644,-97.7361&markers=color:red%7Clabel:F%7C30.2654,-97.7397&markers=color:blue%7Clabel:Z%7C30.2672,-97.7731&markers=color:green%7Clabel:1%7C30.2638,-97.7480&markers=color:green%7Clabel:2%7C30.3916,-97.8547&markers=color:green%7Clabel:3%7C30.2518,-97.8008&markers=color:orange%7Clabel:S%7C30.1575,-97.8431&markers=color:purple%7Clabel:D%7C30.2500,-97.7500&style=feature:poi%7Cvisibility:on&style=feature:transit%7Cvisibility:on&style=feature:road%7Cvisibility:on" alt="Austin Area Map with ACL Trip Locations" class="static-map" />
+                    <div class="map-legend">
+                        <small>🏨 Red: Hotels (L=LINE, F=Fairfield) | 🎵 Blue: ACL/Zilker (Z) | 🍽️ Green: Restaurants (1=Lamberts, 2=Quince, 3=Jacoby's) | 🍖 Orange: Salt Lick (S) | 🎉 Purple: Disco Lines (D)</small>
                     </div>
                 </div>
             </div>
@@ -237,12 +320,7 @@ class ACLApp {
 
         // Emergency Contacts
         sectionsHtml += `
-            <div class="info-section">
-                <div class="info-title">${info.emergency.title}</div>
-                <div class="info-details">
-                    ${info.emergency.details.join('<br>')}
-                </div>
-            </div>
+            
         `;
 
         return sectionsHtml;
@@ -250,9 +328,12 @@ class ACLApp {
 
     setupEventListeners() {
         // Theme toggle
-        const themeToggle = document.querySelector('.theme-toggle');
+        const themeToggle = document.getElementById('theme-toggle-btn');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => this.toggleTheme());
+            console.log('Theme toggle event listener attached');
+        } else {
+            console.error('Theme toggle button not found');
         }
 
         // Tab navigation
@@ -353,6 +434,48 @@ class ACLApp {
             `;
         }
     }
+
+    initializeBackgroundRotation() {
+        // Set initial background
+        this.updateHeaderBackground();
+        
+        // Update every hour (3600000 ms)
+        setInterval(() => {
+            this.updateHeaderBackground();
+        }, 3600000);
+        
+        // Also update every minute for testing (can be removed later)
+        // setInterval(() => {
+        //     this.updateHeaderBackground();
+        // }, 60000);
+    }
+
+    updateHeaderBackground() {
+        const header = document.getElementById('aclheader');
+        if (!header) return;
+
+        const now = new Date();
+        const hour = now.getHours();
+        
+        let backgroundImage = '';
+        
+        // Time-based background selection
+        if (hour >= 6 && hour < 17) {
+            // Morning/Day: 6 AM to 5 PM
+            backgroundImage = './images/austin-morning.jpg';
+        } else if (hour >= 17 && hour < 20) {
+            // Sunset: 5 PM to 8 PM
+            backgroundImage = './images/austin-sunset.jpg';
+        } else {
+            // Night: 8 PM to 6 AM
+            backgroundImage = './images/austin-night.jpg';
+        }
+        
+        header.style.backgroundImage = `url('${backgroundImage}')`;
+        
+        console.log(`Background updated for ${hour}:00 - Using: ${backgroundImage}`);
+    }
+
 }
 
 // Legacy function support for inline onclick handlers

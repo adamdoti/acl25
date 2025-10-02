@@ -38,24 +38,24 @@
   "schedule": [
     {
       "id": "day1",
-      "title": "☀️ THU OCT 2 - Early Arrivals",
+      "title": "☀️ Thu Oct 2 - Early Arrivals",
       "events": [
         {
           "time": "Afternoon",
-          "title": "Check-in & Settle",
+          "title": "Check-in",
           "details": "📍 Hotels - Get settled and explore",
           "type": "general"
         },
         {
           "time": "Lunch",
-          "title": "Lunch (~3 people)",
-          "details": "📍 Location TBD - For early arrivals<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd</small>",
+          "title": "Lunch (~9 people)",
+          "details": "📍 Location TBD - For early arrivals<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Matt, Pavand, David, Boyd</small>",
           "type": "meal"
         },
         {
           "time": "8:30 PM",
           "title": "Dinner (~13 people)",
-          "details": "📍 <a href='https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin' target='_blank'>Lamberts Downtown Barbecue</a><br>401 W 2nd St, Austin, TX 78701<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, David, Boyd, Andy, Noelle, Sarah, John</small>",
+          "details": "📍 <a href='https://maps.google.com/?q=Lamberts+Downtown+Barbecue+Austin' target='_blank'>Lamberts Downtown Barbecue</a><br>401 W 2nd St, Austin, TX 78701<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Matt, Pavand, David, Boyd, Andy, Noelle, Sarah, John</small>",
           "type": "meal"
         },
         {
@@ -68,12 +68,12 @@
     },
     {
       "id": "day2",
-      "title": "🌤️ FRI OCT 3 - ACL Day 1",
+      "title": "🌤️ Fri Oct 3 - ACL Day 1",
       "events": [
         {
           "time": "12:00 PM",
           "title": "Brunch on Lake Austin (~20 people)",
-          "details": "📍 <a href='https://maps.google.com/?q=Quince+Lakehouse+Austin' target='_blank'>Quince Lakehouse</a><br>4404 Eck Ln, Austin, TX 78734<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
+          "details": "📍 <a href='https://maps.google.com/?q=Quince+Lakehouse+Austin' target='_blank'>Quince Lakehouse</a><br>4404 Eck Ln, Austin, TX 78734<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
           "type": "meal"
         },
         {
@@ -92,22 +92,22 @@
     },
     {
       "id": "day3",
-      "title": "☀️ SAT OCT 4 - ACL Day 2",
+      "title": "☀️ Sat Oct 4 - ACL Day 2",
       "events": [
         {
-          "time": "12:00 PM",
-          "title": "Party Bus Pickup",
-          "details": "📍 Hotel pickup for BBQ lunch",
+          "time": "11:30 PM",
+          "title": "Private Bus to Salt Lick BBQ",
+          "details": "📍 LINE Hotel pickup for BBQ lunch. Approx 30 min drive. BYOB beverages on board.",
           "type": "general"
         },
         {
-          "time": "12:30 PM",
-          "title": "BBQ Lunch (~20 people)",
-          "details": "📍 <a href='https://maps.google.com/?q=Salt+Lick+BBQ+Austin' target='_blank'>Salt Lick BBQ</a><br>18300 FM 1826, Austin, TX 78737<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Neil, Shannon, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
+          "time": "12:15 PM",
+          "title": "BBQ Lunch (~20 people, BYOB)",
+          "details": "📍 <a href='https://maps.google.com/?q=Salt+Lick+BBQ+Austin' target='_blank'>Salt Lick BBQ</a><br>18300 FM 1826, Austin, TX 78737<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Matt, Pavand, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey, Sean, Elizabeth</small>",
           "type": "meal"
         },
         {
-          "time": "2:00 PM",
+          "time": "3:30 PM",
           "title": "<span class='highlight'>ACL Music Festival - Day 2</span>",
           "details": "📍 <a href='https://maps.google.com/?q=Zilker+Park+Austin' target='_blank'>Zilker Park</a><br>2100 Barton Springs Rd, Austin, TX 78746<br>Gates open at 12 PM",
           "type": "festival"
@@ -122,7 +122,7 @@
     },
     {
       "id": "day4",
-      "title": "🌤️ SUN OCT 5 - ACL Day 3",
+      "title": "🌤️ Sun Oct 5 - ACL Day 3",
       "events": [
         {
           "time": "11:00 AM",
@@ -146,12 +146,12 @@
     },
     {
       "id": "day5",
-      "title": "🌧️ MON OCT 6 - Departure Day",
+      "title": "🌧️ Mon Oct 6 - Departure Day (boo)",
       "events": [
         {
           "time": "Breakfast",
           "title": "Breakfast (~16 people)",
-          "details": "📍 Location TBD - Final meal together<br><small style='color: #666; font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey</small>",
+          "details": "📍 Location TBD - Final meal together<br><small style='font-size: 0.8em;'>Ash, Mandy, Graham, Sara, Adam, Leia, David, Boyd, Andy, Noelle, Sarah, John, Marc, Beth, Clayon, Korey</small>",
           "type": "meal"
         },
         {
@@ -180,12 +180,6 @@
       "name": "Adam",
       "arrival": "Thursday 1:35 PM - Flight #1746",
       "departure": "Monday 2:15 PM - Flight #0670",
-      "hotel": "The LINE Austin"
-    },
-    {
-      "name": "Neil & Shannon",
-      "arrival": "~Thursday afternoon",
-      "departure": "~Saturday afternoon",
       "hotel": "The LINE Austin"
     },
     {
@@ -237,6 +231,80 @@
       "hotel": "Fairfield by Marriott Inn & Suites Austin Downtown"
     }
   ],
+  "lineup": {
+    "friday": {
+      "title": "🎵 Friday October 3, 2025",
+      "headliners": [
+        {"name": "Tyler, The Creator", "time": "9:30 PM"},
+        {"name": "Hozier", "time": "8:00 PM"},
+        {"name": "Luke Combs", "time": "7:15 PM"}
+      ],
+      "artists": [
+        {"name": "Cage the Elephant", "time": "6:00 PM"},
+        {"name": "Empire of the Sun", "time": "5:15 PM"},
+        {"name": "Glass Animals", "time": "4:30 PM"},
+        {"name": "Tinashe", "time": "3:45 PM"},
+        {"name": "The Marias", "time": "3:00 PM"},
+        {"name": "Kali Uchis", "time": "2:30 PM"},
+        {"name": "Bad Bunny", "time": "2:00 PM"},
+        {"name": "Parcels", "time": "1:30 PM"},
+        {"name": "Fontaines D.C.", "time": "1:00 PM"},
+        {"name": "Remi Wolf", "time": "12:30 PM"},
+        {"name": "Clairo", "time": "12:15 PM"},
+        {"name": "Khruangbin", "time": "12:00 PM"},
+        {"name": "070 Shake", "time": "11:45 AM"},
+        {"name": "Sampha", "time": "11:30 AM"}
+      ]
+    },
+    "saturday": {
+      "title": "🎶 Saturday October 4, 2025", 
+      "headliners": [
+        {"name": "Sabrina Carpenter", "time": "9:30 PM"},
+        {"name": "The Strokes", "time": "8:00 PM"},
+        {"name": "Future", "time": "7:15 PM"}
+      ],
+      "artists": [
+        {"name": "Doechii", "time": "6:00 PM"},
+        {"name": "Chappell Roan", "time": "5:15 PM"},
+        {"name": "Benson Boone", "time": "4:30 PM"},
+        {"name": "Victoria Monét", "time": "3:45 PM"},
+        {"name": "Maggie Rogers", "time": "3:00 PM"},
+        {"name": "Tems", "time": "2:30 PM"},
+        {"name": "Wallows", "time": "2:00 PM"},
+        {"name": "Japanese Breakfast", "time": "1:30 PM"},
+        {"name": "Turnstile", "time": "1:00 PM"},
+        {"name": "Steve Lacy", "time": "12:30 PM"},
+        {"name": "Wet Leg", "time": "12:15 PM"},
+        {"name": "King Krule", "time": "12:00 PM"},
+        {"name": "Daniel Caesar", "time": "11:45 AM"},
+        {"name": "Raye", "time": "11:30 AM"}
+      ]
+    },
+    "sunday": {
+      "title": "🎤 Sunday October 5, 2025",
+      "headliners": [
+        {"name": "Doja Cat", "time": "9:30 PM"},
+        {"name": "John Summit", "time": "8:00 PM"},
+        {"name": "Noah Kahan", "time": "7:15 PM"}
+      ],
+      "artists": [
+        {"name": "Reneé Rapp", "time": "6:00 PM"},
+        {"name": "Tate McRae", "time": "5:15 PM"},
+        {"name": "Vampire Weekend", "time": "4:30 PM"},
+        {"name": "FKA twigs", "time": "3:45 PM"},
+        {"name": "Lana Del Rey", "time": "3:00 PM"},
+        {"name": "Charli XCX", "time": "2:30 PM"},
+        {"name": "Mac DeMarco", "time": "2:00 PM"},
+        {"name": "Phoenix", "time": "1:30 PM"},
+        {"name": "Caroline Polachek", "time": "1:00 PM"},
+        {"name": "Boygenius", "time": "12:30 PM"},
+        {"name": "The 1975", "time": "12:15 PM"},
+        {"name": "Phoebe Bridgers", "time": "12:00 PM"},
+        {"name": "Tyler Cole", "time": "11:45 AM"},
+        {"name": "Benee", "time": "11:30 AM"}
+      ]
+    }
+  },
   "info": {
     "festival": {
       "title": "🎫 ACL Festival",
@@ -347,7 +415,6 @@
     "emergency": {
       "title": "☎️ Emergency Contacts",
       "details": [
-        "• Trip Organizer: Your name & number",
         "• Local Emergency: 911",
         "• Non-emergency: 311"
       ]

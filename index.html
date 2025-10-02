@@ -11,18 +11,15 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <h1>ACL 2025</h1>
-            <button class="theme-toggle" onclick="toggleTheme()">
-                <span id="theme-icon">🌙</span>
-                <span id="theme-text">Dark</span>
-            </button>
+        <div id="aclheader" class="header">
+            <img src="./images/acl-horz.png" alt="ACL 2025" class="header-logo">
         </div>
         
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
             <button class="nav-tab active" data-tab="schedule" onclick="showTab('schedule')">Schedule</button>
-            <button class="nav-tab" data-tab="attendees" onclick="showTab('attendees')">Attendees</button>
+            <button class="nav-tab" data-tab="attendees" onclick="showTab('attendees')">Fidgets</button>
+            <button class="nav-tab" data-tab="lineup" onclick="showTab('lineup')">Lineup</button>
             <button class="nav-tab" data-tab="info" onclick="showTab('info')">Info</button>
         </div>
         
@@ -35,7 +32,13 @@
         
         <div id="attendees" class="tab-content">
             <div class="loading">
-                <p>Loading attendees...</p>
+                <p>Loading the fidgets...</p>
+            </div>
+        </div>
+        
+        <div id="lineup" class="tab-content">
+            <div class="loading">
+                <p>Loading lineup...</p>
             </div>
         </div>
         
@@ -43,6 +46,14 @@
             <div class="loading">
                 <p>Loading info...</p>
             </div>
+        </div>
+        
+        <!-- Theme Toggle at Bottom -->
+        <div class="bottom-theme-toggle">
+            <button class="theme-toggle" id="theme-toggle-btn">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Dark</span>
+            </button>
         </div>
     </div>
     
