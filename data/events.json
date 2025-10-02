@@ -146,7 +146,7 @@
     },
     {
       "id": "day5",
-      "title": "🌧️ Mon Oct 6 - Departure Day (boo)",
+      "title": "☀️ Mon Oct 6 - Departure Day (boo)",
       "events": [
         {
           "time": "Breakfast",
@@ -157,7 +157,7 @@
         {
           "time": "Afternoon",
           "title": "Departures",
-          "details": "📍 Various times - Safe travels everyone!",
+          "details": "✈️ Various times - Safe travels everyone!",
           "type": "general"
         }
       ]
