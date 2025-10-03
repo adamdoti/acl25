@@ -119,9 +119,9 @@ class ACLApp {
             // Add ACL badge for all attendees
             let aclBadge = '';
             let badgeClass = 'acl-badge';
-            
+            //David boyd 1 - Johnny mac 2 - ckayton 1 - graham 3 - andy 1 - matt 1
             if (attendee.name === 'Ash & Mandy') {
-                aclBadge = '<div class="acl-badge acl-badge-5">ACL x 5</div>';
+                aclBadge = '<div class="acl-badge acl-badge-2">ACL x 8</div>';
             } else if (attendee.name === 'Adam') {
                 aclBadge = '<div class="acl-badge acl-badge-2">ACL x 2</div>';
             } else {
