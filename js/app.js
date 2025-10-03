@@ -118,12 +118,29 @@ class ACLApp {
             
             // Add ACL badge for all attendees
             let aclBadge = '';
-            let badgeClass = 'acl-badge';
-            //David boyd 1 - Johnny mac 2 - ckayton 1 - graham 3 - andy 1 - matt 1
+            
             if (attendee.name === 'Ash & Mandy') {
-                aclBadge = '<div class="acl-badge acl-badge-2">ACL x 8</div>';
+                aclBadge = '<div class="acl-badge acl-badge-8">ACL x 8</div>';
             } else if (attendee.name === 'Adam') {
                 aclBadge = '<div class="acl-badge acl-badge-2">ACL x 2</div>';
+            } else if (attendee.name === 'Graham & Sara') {
+                aclBadge = '<div class="acl-badge acl-badge-3">ACL x 3</div>';
+            } else if (attendee.name === 'David & Boyd') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Andy & Noelle') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Matt & Pavand') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Sarah & John McFadden') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Sean & Elizabeth') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Clayon & Korey') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Marc & Beth') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
+            } else if (attendee.name === 'Leia') {
+                aclBadge = '<div class="acl-badge acl-badge-1">ACL x 1</div>';
             } else {
                 aclBadge = '<div class="acl-badge acl-badge-unknown">ACL x ?</div>';
             }
@@ -210,8 +227,24 @@ class ACLApp {
             const card = document.createElement('div');
             card.className = 'merch-card fade-in';
             
+            // Handle single image or multiple images
+            let imageHtml = '';
+            if (item.image) {
+                imageHtml = `<div class="merch-image"><img src="${item.image}" alt="${item.title}" /></div>`;
+            } else if (item.images && item.images.length > 0) {
+                if (item.images.length === 1) {
+                    imageHtml = `<div class="merch-image"><img src="${item.images[0]}" alt="${item.title}" /></div>`;
+                } else {
+                    imageHtml = `<div class="merch-images-dual">
+                        ${item.images.map((img, index) => 
+                            `<img src="${img}" alt="${item.title} ${index === 0 ? 'Front' : 'Back'}" />`
+                        ).join('')}
+                    </div>`;
+                }
+            }
+            
             card.innerHTML = `
-                ${item.image ? `<div class="merch-image"><img src="${item.image}" alt="${item.title}" /></div>` : ''}
+                ${imageHtml}
                 <div class="merch-title">${item.title}</div>
                 <div class="merch-type">${item.type}</div>
                 ${item.description ? `<div class="merch-description">${item.description}</div>` : ''}

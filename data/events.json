@@ -319,6 +319,13 @@
       "description": "",
       "cost": "$0.00",
       "image": "./images/fidgets-poster.png"
+    },
+    {
+      "title": "Mandy's Fidget Tour T",
+      "type": "Shirt",
+      "description": "",
+      "cost": "$0.00",
+      "images": ["./images/tshirt-front.jpg", "./images/tshirt-back.jpg"]
     }
   ],
   "info": {
