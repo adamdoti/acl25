@@ -326,6 +326,20 @@
       "description": "",
       "cost": "$0.00",
       "images": ["./images/tshirt-front.jpg", "./images/tshirt-back.jpg"]
+    },
+    {
+      "title": "Slough Tours by Mandi",
+      "type": "Historical Artifact",
+      "description": "",
+      "cost": "$100.00",
+      "image": "./images/slough-broochure-1.PNG"
+    },
+    {
+      "title": "Slough Tours by Mandi",
+      "type": "Historical Artifact",
+      "description": "",
+      "cost": "$127.00",
+      "image": "./images/slough-brochure-3.PNG"
     }
   ],
   "info": {
