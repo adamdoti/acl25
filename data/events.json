@@ -127,7 +127,7 @@
         {
           "time": "12:30 AM",
           "title": "Recovery Brunch",
-          "details": "📍 <a href='https://maps.google.com/?q=Jacoby's+Restaurant+Austin' target='_blank'>Jacoby's Restaurant</a><br>3235 Bee Caves Rd, Austin, TX 78746<br>Steakhouse, Southern Food & Brunch - A great place to lick our wounds and celebrate!<br>Transportation: Share Ubers<br><small style='color: #666; font-size: 0.8em;'>Adam, Ash, Mandy, Graham, Sara, Andy, Noelle, David, Boyd, Sarah, John, Leia, Marc, Beth, Clayon, Korey (16 ppl)</small>",
+          "details": "📍 <a href='https://maps.app.goo.gl/VwQ3Gm2aDSWpN7ec9' target='_blank'>Jacoby's Restaurant & Mercantile</a><br>3235 E Cesar Chavez St, Austin, TX 78702<br>Steakhouse, Southern Food & Brunch - A great place to lick our wounds and celebrate!<br>Transportation: Share Ubers<br><small style='color: #666; font-size: 0.8em;'>Adam, Ash, Mandy, Graham, Sara, Andy, Noelle, David, Boyd, Sarah, John, Leia, Marc, Beth, Clayon, Korey (16 ppl)</small>",
           "type": "meal"
         },
         {
@@ -407,9 +407,9 @@
         "link": "https://maps.google.com/?q=Quince+Lakehouse+Austin"
       },
       {
-        "name": "Jacoby's Restaurant",
-        "address": "3235 Bee Caves Rd",
-        "link": "https://maps.google.com/?q=Jacoby's+Restaurant+Austin"
+        "name": "Jacoby's Restaurant & Mercantile",
+        "address": "3235 E Cesar Chavez St, Austin, TX 78702",
+        "link": "https://maps.app.goo.gl/7pPNPpQUndgpBUgd7"
       },
       {
         "name": "Town Lake",
